@@ -164,6 +164,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/* global m */
+
 function refresh() {
   document.getElementById('output').srcdoc = document.getElementById('editor-text').value;
 }
@@ -178,15 +180,23 @@ var RealTimeEditor = /*#__PURE__*/function (_Page) {
   var _proto = RealTimeEditor.prototype;
 
   _proto.view = function view() {
-    return m(".IndexPage", [flarum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a.prototype.hero(), m('.container', m('.sideNavContainer', [m('nav.IndexPage-nav.sideNav', m('ul', flarum_helpers_listItems__WEBPACK_IMPORTED_MODULE_3___default()(flarum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a.prototype.sidebarItems().toArray()))), m('.IndexPage-results.sideNavOffset', m("div", {
+    return m(".IndexPage", [flarum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a.prototype.hero(), m('.container', m('.sideNavContainer', [m('nav.IndexPage-nav.sideNav', m('ul', flarum_helpers_listItems__WEBPACK_IMPORTED_MODULE_3___default()(flarum_components_IndexPage__WEBPACK_IMPORTED_MODULE_2___default.a.prototype.sidebarItems().toArray()))), m('.IndexPage-results.sideNavOffset', [m("div", {
+      className: "hometitle"
+    }, m("h1", {
+      className: "maintitle"
+    }, "Html Editor")), m("div", {
+      className: "mainpar"
+    }, m("p", {
+      className: "desc"
+    }, "This Html editor support HTML/Css code, simply write your code and see the result in real time in the output box")), m("div", {
       className: "main"
     }, [m("textarea", {
       id: "editor-text",
       onkeyup: refresh,
-      placeholder: "flarum is good"
+      placeholder: "Type or paste your code here..."
     }), m("iframe", {
       id: "output"
-    })]))]))]);
+    })])])]))]);
   };
 
   return RealTimeEditor;
