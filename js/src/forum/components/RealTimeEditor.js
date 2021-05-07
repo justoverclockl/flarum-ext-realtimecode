@@ -25,7 +25,7 @@ export default class RealTimeEditor extends Page {
             ),
             m('div', { className: 'main' }, [
               m('textarea', { className: 'contedit', id: 'editor-text', onkeyup: refresh, placeholder: 'Type or paste your code here...' }),
-              m('div', { className: 'hometitle' }, m('h1', { className: 'outptitle' }, 'Live Preview Output')),
+              m('div', { className: 'hometitle' }, m('h1', { className: 'outptitle' }, app.translator.trans('flarum-ext-realtimecode.forum.outputtitle'))),
               m('iframe', { id: 'output' }),
             ]),
           ]),
