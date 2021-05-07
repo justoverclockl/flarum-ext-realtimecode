@@ -1,3 +1,5 @@
 flarum-ext-realtimecode:
   forum:
     title: Html Editor
+    htmleditor: Html Editor
+    description: This Html editor support HTML/Css code, simply write your code and see the result in real time in the output box

@@ -2,7 +2,7 @@
   "name": "justoverclock/flarum-ext-realtimecode",
   "description": "Add a real time Html editor to Flarum",
   "keywords": [
-    "flarum"
+    "html editor"
   ],
   "type": "flarum-extension",
   "license": "MIT",
@@ -24,11 +24,6 @@
       "Justoverclock\\Realtimecode\\": "src/"
     }
   },
-  "autoload-dev": {
-    "psr-4": {
-      "Justoverclock\\Realtimecode\\Tests\\": "tests/"
-    }
-  },
   "extra": {
     "flarum-extension": {
       "title": "Realtimecode",
@@ -42,20 +37,5 @@
     "flagrow": {
       "discuss": ""
     }
-  },
-  "scripts": {
-    "test": [
-      "@test:unit",
-      "@test:integration"
-    ],
-    "test:unit": "phpunit -c tests/phpunit.unit.xml",
-    "test:integration": "phpunit -c tests/phpunit.integration.xml",
-    "test:setup": "@php tests/integration/setup.php"
-  },
-  "scripts-descriptions": {
-    "test": "Runs all tests.",
-    "test:unit": "Runs all unit tests.",
-    "test:integration": "Runs all integration tests.",
-    "test:setup": "Sets up a database for use with integration tests. Execute this only once."
   }
 }
