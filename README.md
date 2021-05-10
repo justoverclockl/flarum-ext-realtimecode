@@ -9,19 +9,18 @@ A [Flarum](http://flarum.org) extension. Add a real time Html editor to Flarum
 Install with composer:
 
 ```sh
-composer require justoverclock/flarum-ext-realtimecode:"*"
+composer require justoverclock/flarum-ext-realtimecode
 ```
 
 ### Updating
 
 ```sh
-composer update justoverclock/flarum-ext-realtimecode:"*"
-php flarum migrate
+composer update justoverclock/flarum-ext-realtimecode
 php flarum cache:clear
 ```
 
 ### Links
 
 - [Packagist](https://packagist.org/packages/justoverclock/flarum-ext-realtimecode)
-- [GitHub](https://github.com/justoverclock/flarum-ext-realtimecode)
-- [Discuss](https://discuss.flarum.org/d/PUT_DISCUSS_SLUG_HERE)
+- [GitHub](https://github.com/justoverclockl/flarum-ext-realtimecode)
+
