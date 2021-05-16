@@ -17,6 +17,5 @@ extend(IndexPage.prototype, 'navItems', (navItems) => {
     </LinkButton>,
     100
   );
-
   return navItems;
 });
