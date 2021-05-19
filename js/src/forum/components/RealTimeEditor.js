@@ -1,9 +1,9 @@
 import Page from 'flarum/components/Page';
 import IndexPage from 'flarum/components/IndexPage';
 import listItems from 'flarum/helpers/listItems';
-import CodeMirror from "codemirror";
-
-
+import CodeMirror from 'codemirror';
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/css/css';
 
 /* global m */
 
@@ -24,24 +24,30 @@ export default class RealTimeEditor extends Page {
             m('div', { className: 'mainpar' }, m('p', { className: 'desc' }, app.translator.trans('flarum-ext-realtimecode.forum.description'))),
             m('div', { className: 'main' }, [
               m('textarea', {
-                  className: 'contedit',
-                  id: 'editortext',
-                  name: 'editortext',
-                  oncreate: ({dom}) => CodeMirror.fromTextArea(dom, {
+                className: 'contedit',
+                id: 'editortext',
+                name: 'editortext',
+                oncreate: ({ dom }) =>
+                  CodeMirror.fromTextArea(dom, {
                     lineNumbers: true,
                     lineWrapping: true,
-                    mode: "text/html",
+                    mode: 'text/html',
                     matchBrackets: true,
-                    onkeyup: refresh()
-                }),
-                }),
-
-              m('div',
+                  }).on('change', (cm) => {
+                    this.iframe.srcdoc = cm.getValue();
+                  }),
+              }),
+              m(
+                'div',
                 { className: 'hometitle' },
                 m('h1', { className: 'outptitle' }, app.translator.trans('flarum-ext-realtimecode.forum.outputtitle'))
               ),
-              m('iframe', { id: 'output' }),
-
+              m('iframe', {
+                id: 'output',
+                oncreate: ({ dom }) => {
+                  this.iframe = dom;
+                },
+              }),
             ]),
           ]),
         ])
@@ -49,8 +55,3 @@ export default class RealTimeEditor extends Page {
     ]);
   }
 }
-
-function refresh() {
-  document.getElementById('output').srcdoc = document.getElementById('editortext').value;
-}
-
