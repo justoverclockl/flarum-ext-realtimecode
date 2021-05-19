@@ -2,8 +2,7 @@ import Page from 'flarum/components/Page';
 import IndexPage from 'flarum/components/IndexPage';
 import listItems from 'flarum/helpers/listItems';
 import CodeMirror from 'codemirror';
-import 'codemirror/mode/javascript/javascript';
-import 'codemirror/mode/css/css';
+import 'codemirror/mode/htmlmixed/htmlmixed';
 
 /* global m */
 
@@ -31,7 +30,7 @@ export default class RealTimeEditor extends Page {
                   CodeMirror.fromTextArea(dom, {
                     lineNumbers: true,
                     lineWrapping: true,
-                    mode: 'text/html',
+                    mode: 'htmlmixed',
                     matchBrackets: true,
                   }).on('change', (cm) => {
                     this.iframe.srcdoc = cm.getValue();
